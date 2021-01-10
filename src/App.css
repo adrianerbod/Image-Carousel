@@ -1,0 +1,86 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #ECEBEB;
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imag {
+  width: 1000px;
+  height: 600px;
+  border-radius: 5px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.arrow {
+  font-size: 3rem;
+  position: absolute;
+  color: #303131;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  color: #5C6C6C;
+}
+
+.leftArrow {
+  top: 50%;
+  left: 50px; 
+}
+
+.rightArrow {
+  top: 50%;
+  right: 50px;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+@media (max-width: 1000px) {
+  .imag {
+    width: 800px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imag {
+    width: 500px;
+    height: auto;
+  }
+  .leftArrow, .rightArrow {
+    top: 75%;
+  }
+}
+
+@media (max-width: 450px) {
+  .imag {
+    width: 300px;
+    height: auto;
+  }
+  .leftArrow, .rightArrow {
+    top: 65%;
+  }
+}
